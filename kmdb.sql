@@ -160,6 +160,46 @@ INSERT INTO movies(
     ("The Dark Knight", 2008, 3, 1),
     ("The Dark Knight Rises", 2012, 3, 1);
 
+INSERT INTO characters(
+    character_name,
+    movie_id,
+    actor_id
+)
+    VALUES
+    ("Bruce Wayne", 1, 1),
+    ("Bruce Wayne", 2, 1),
+    ("Bruce Wayne", 3, 1),
+    ("Alfred", 1, 2),
+    ("Alfred", 2, 2),
+    ("Ra's Al Ghul", 1, 3),
+    ("Rachel Dawes", 1, 4),
+    ("Rachel Dawes", 2, 8),
+    ("Commissioner Gordon", 1, 5),
+    ("Commissioner Gordon", 3, 5),
+    ("Joker", 2, 6),
+    ("Harvey Dent", 2, 7),
+    ("Bane", 3, 9),
+    ("John Blake", 3, 10),
+    ("Selina Kyle", 3, 11);
+
+INSERT INTO actors(
+    first_name,
+    last_name
+)
+    VALUES
+    ("Christian", "Bale"),
+    ("Michael", "Caine"),
+    ("Liam", "Neeson"),
+    ("Katie", "Holmes"),
+    ("Gary", "Oldman"),
+    ("Heath", "Ledger"),
+    ("Aaron", "Eckhart"),
+    ("Maggie", "Gyllenhaal"),
+    ("Tom", "Hardy"),
+    ("Joseph", "Gordon-Levitt"),
+    ("Anne", "Hathaway");
+    
+
 -- Prints a header for the movies output
 .print "Movies"
 .print "======"
