@@ -132,8 +132,7 @@ CREATE TABLE characters (
 
 CREATE TABLE actors (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    first_name TEXT,
-    last_name TEXT
+    full_name TEXT
 );
 
 CREATE TABLE studios (
@@ -183,21 +182,20 @@ INSERT INTO characters(
     ("Selina Kyle", 3, 11);
 
 INSERT INTO actors(
-    first_name,
-    last_name
+    full_name
 )
     VALUES
-    ("Christian", "Bale"),
-    ("Michael", "Caine"),
-    ("Liam", "Neeson"),
-    ("Katie", "Holmes"),
-    ("Gary", "Oldman"),
-    ("Heath", "Ledger"),
-    ("Aaron", "Eckhart"),
-    ("Maggie", "Gyllenhaal"),
-    ("Tom", "Hardy"),
-    ("Joseph", "Gordon-Levitt"),
-    ("Anne", "Hathaway");
+    ("Christian Bale"),
+    ("Michael Caine"),
+    ("Liam Neeson"),
+    ("Katie Holmes"),
+    ("Gary Oldman"),
+    ("Heath Ledger"),
+    ("Aaron Eckhart"),
+    ("Maggie Gyllenhaal"),
+    ("Tom Hardy"),
+    ("Joseph Gordon-Levitt"),
+    ("Anne Hathaway");
     
 INSERT INTO studios(
     studio_name
@@ -221,7 +219,12 @@ INSERT INTO ratings(
 .print ""
 
 -- The SQL statement for the movies output
--- TODO!
+SELECT movies.title, movies.year_released, ratings.rating_name, studios.studio_name
+FROM movies
+INNER JOIN ratings ON movies.rating_id = ratings.id
+INNER JOIN studios ON movies.studio_id = studios.id
+GROUP BY movies.title
+;
 
 -- Prints a header for the cast output
 .print ""
@@ -232,3 +235,10 @@ INSERT INTO ratings(
 
 -- The SQL statement for the cast output
 -- TODO!
+
+SELECT movies.title, actors.full_name, characters.character_name
+FROM movies
+INNER JOIN characters ON movies.id = characters.movie_id
+INNER JOIN actors ON characters.actor_id = actors.id
+ORDER BY movies.title
+;
