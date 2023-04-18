@@ -199,6 +199,21 @@ INSERT INTO actors(
     ("Joseph", "Gordon-Levitt"),
     ("Anne", "Hathaway");
     
+INSERT INTO studios(
+    studio_name
+)
+    VALUES
+    ("Warner Bros.");
+
+INSERT INTO ratings(
+    rating_name
+)
+    VALUES
+    ("G"),
+    ("PG"),
+    ("PG-13"),
+    ("R");
+
 
 -- Prints a header for the movies output
 .print "Movies"
